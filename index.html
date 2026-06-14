@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para o Amor da Minha Vida ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(#ffb6c1,#ffe4e1);
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+.container{
+    padding:50px 20px;
+}
+
+h1{
+    font-size:3em;
+    margin-top:40px;
+    animation:brilhar 2s infinite alternate;
+}
+
+@keyframes brilhar{
+    from{transform:scale(1);}
+    to{transform:scale(1.05);}
+}
+
+p{
+    font-size:1.2em;
+    margin:20px auto;
+    max-width:700px;
+}
+
+.galeria{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.foto{
+    width:220px;
+    height:220px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+.foto img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.botao{
+    margin-top:50px;
+    padding:18px 35px;
+    border:none;
+    border-radius:30px;
+    background:#ff2e63;
+    color:white;
+    font-size:1.2em;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.botao:hover{
+    transform:scale(1.1);
+}
+
+#surpresa{
+    display:none;
+    margin-top:40px;
+    font-size:1.5em;
+    animation:aparecer 1s;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:scale(0.5);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* Corações */
+.coracao{
+    position:fixed;
+    top:-20px;
+    color:#ff3366;
+    font-size:25px;
+    animation:cair linear infinite;
+}
+
+@keyframes cair{
+    to{
+        transform:translateY(110vh);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>❤️ Para o Amor da Minha Vida ❤️</h1>
+
+<p>
+Desde que você entrou na minha vida, tudo ficou mais bonito.
+Seu sorriso ilumina meus dias e seu carinho faz meu coração bater mais forte.
+Este pequeno site é só uma forma de mostrar o quanto você é especial para mim.
+Eu te amo infinitamente! 💖
+</p>
+
+<h2>Nossos Momentos 📸</h2>
+
+<div class="galeria">
+    <div class="foto">
+        <img src="foto1.jpg">
+    </div>
+
+    <div class="foto">
+        <img src="foto2.jpg">
+    </div>
+
+    <div class="foto">
+        <img src="foto3.jpg">
+    </div>
+</div>
+
+<button class="botao" onclick="mostrarSurpresa()">
+🎁 Clique para uma surpresa
+</button>
+
+<div id="surpresa">
+    💖 Você é a melhor parte da minha vida.<br>
+    Obrigado por existir e por fazer cada dia valer a pena.<br><br>
+    <h2>Eu te amo para sempre! ❤️</h2>
+</div>
+
+</div>
+
+<!-- Música -->
+<audio autoplay loop controls>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function mostrarSurpresa(){
+    document.getElementById("surpresa").style.display = "block";
+}
+
+// Corações caindo
+function criarCoracao(){
+    const coracao = document.createElement("div");
+    coracao.classList.add("coracao");
+    coracao.innerHTML = "❤";
+
+    coracao.style.left = Math.random() * window.innerWidth + "px";
+    coracao.style.animationDuration =
+        (Math.random() * 4 + 3) + "s";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(()=>{
+        coracao.remove();
+    },7000);
+}
+
+setInterval(criarCoracao,300);
+</script>
+
+</body>
+</html>
